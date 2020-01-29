@@ -94,7 +94,7 @@ with tf.Session() as sess:
         train_dict = {x: x_train, y: y_train, keep_prob: 0.7}
         sess.run(train_op, feed_dict=train_dict)
         losses, acc_ = sess.run([loss, accuracy], feed_dict=train_dict)
-		train_log(train_loss=losses, train_acc=acc_)
+	train_log(train_loss=losses, train_acc=acc_)
         y_convs = sess.run(prediction, feed_dict=train_dict)
         print("step:{}, loss:{}, acc:{}".format(i + 1, losses, acc_))
         model.save_model(sess, MODEL_PATH, overwrite=True)
